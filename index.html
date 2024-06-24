@@ -17,9 +17,9 @@
 
     <script>
       function setRanque() {
-        let value = document.getElementById('vitorias').value - document.getElementById('derrotas').value;
-
-        
+        let heroElo;
+        let value;
+	      value = document.getElementById('vitorias').value - document.getElementById('derrotas').value;
         
           if (value <= 10) {
             heroElo = "Ferro";
@@ -38,7 +38,7 @@
           } else {
             heroElo = "Nenhum";
           }
-        document.getElementById('heroText').innerHTML = "O Herói <b>" + document.getElementById('heroName').value + "</b> está no nível <b>" + heroElo + "</b>";
+        document.getElementById('heroText').innerHTML = "O Herói possui um saldo de <b>" + value + "</b> vitórias e está no nível <b>" + heroElo + "</b>";
       }
     </script>
     
