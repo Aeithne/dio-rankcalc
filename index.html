@@ -6,5 +6,41 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    <h1>Calculadora de Ranqueadas</h1>
+    <h5>por Aeithne</h5>
+
+    <p>Vitórias: <input type="number" id="vitorias" oninput="setRanque()"/></p> 
+
+    <p>Derrotas: <input type="number" id="derrotas" oninput="setRanque()"/></p> 
+
+    <p id="heroText"></p>
+
+    <script>
+      function setRanque() {
+        let value = document.getElementById('vitorias').value - document.getElementById('derrotas').value;
+
+        
+        
+          if (value <= 10) {
+            heroElo = "Ferro";
+          } else if (value <= 20) {
+            heroElo = "Bronze";
+          } else if (value <= 50) {
+            heroElo = "Prata";
+          } else if (value <= 80) {
+            heroElo = "Ouro";
+          } else if (value <= 90) {
+            heroElo = "Diamante";
+          } else if (value <= 100) {
+            heroElo = "Lendário";
+          } else if (value > 100) {
+            heroElo = "Imortal";
+          } else {
+            heroElo = "Nenhum";
+          }
+        document.getElementById('heroText').innerHTML = "O Herói <b>" + document.getElementById('heroName').value + "</b> está no nível <b>" + heroElo + "</b>";
+      }
+    </script>
+    
   </body>
 </html>
